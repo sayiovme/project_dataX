@@ -1,0 +1,6 @@
+{
+	"root": "app/frontend",
+	"outDir": "public/vite",
+	"manifest": true,
+	"publicDir": "public"
+}

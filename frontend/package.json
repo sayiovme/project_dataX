@@ -1,0 +1,22 @@
+{
+	"name": "vite-vue-rails-project",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"axios": "^0.21.4",
+		"pinia": "^3.0.3",
+		"vue": "^3.0.0"
+	},
+	"devDependencies": {
+		"pug": "^3.0.3",
+		"typescript": "^5.8.3",
+		"vite": "^5.4.19",
+		"vite-plugin-pug": "^0.4.1",
+		"vue-pug-plugin": "^2.0.4"
+	}
+}
