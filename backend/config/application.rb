@@ -8,6 +8,12 @@ Bundler.require(*Rails.groups)
 
 module DataX
   class Application < Rails::Application
+
+    # 세션 사용 위한 설정
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
+    config.api_only = true  # ← 이게 true여도 위 2줄 덕분에 세션 사용 가능
+    
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 
@@ -28,6 +34,5 @@ module DataX
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
-    config.middleware.use ActionDispatch::Session::CookieStore, key: '_your_app_session'
   end
 end

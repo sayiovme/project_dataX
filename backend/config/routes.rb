@@ -6,4 +6,9 @@ Rails.application.routes.draw do
   # 로그인, 로그아웃
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
+
+  # 태스크 CRUD
+  resources :workspaces do
+  resources :tasks
+  end
 end
