@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:create] #로그인할 때 유저인증 스킵
   def create
     result = UserService.authenticate_user(params[:email], params[:password])
 
@@ -13,7 +14,7 @@ class SessionsController < ApplicationController
 
   def destroy
     # 세션에서 사용자 정보 삭제
-    reset_session
+      reset_session
     render json: { message: 'Logout is completed!' }, status: :ok
   end
 end

@@ -14,3 +14,14 @@
 #       methods: [:get, :post, :put, :patch, :delete, :options, :head]
 #   end
 # end
+
+Rails.application.config.middleware.insert_before 0, Rack::Cors do
+  allow do
+    origins 'http://localhost:5173'  # Vue 앱 주소
+
+    resource '*',
+      headers: :any,
+      credentials: true,  # ★ 세션/쿠키 허용
+      methods: [:get, :post, :patch, :put, :delete, :options, :head]
+  end
+end
